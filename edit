@@ -1,0 +1,19 @@
+# docker build -t identidock .
+# docker run -d -p 5001:5000 -e "ENV=DEV" identidock
+
+# docker build -t initial3/identidock:0.2 .
+# docker push initial3/identidock:0.2
+
+#실행중인 컨테이너 삭제 docker rm $(docker stop $(docker ps -lq))
+
+docker rm -f $(docker ps -aq) (will remove all of your containers)
+docker network rm $(docker network ls -q) (will remove all of your networks
+
+# kubectl create -f *.yaml
+# kubectl get pods -l run=my-nginx -o wide
+
+# Rolling Update : https://tachingchen.com/blog/kubernetes-rolling-update-with-deployment/
+# format
+$ kubectl set image deployment <deployment> <container>=<image> --record
+# example
+$ kubectl set image deployment nginx nginx=nginx:1.11.5 --record

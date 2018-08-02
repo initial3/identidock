@@ -1,0 +1,41 @@
+---
+  apiVersion:   apps/v1
+  kind:   Deployment
+  metadata:
+    name:   identidock
+  spec:
+    selector:
+      matchLabels:
+        run:   identidock
+    replicas:   2
+    template:
+      metadata:
+        labels:
+          run:   identidock
+      spec:
+        containers:
+        - name:   identidock
+          image:   initial3/identidock:0.1
+          ports:
+          - containerPort:   5000
+
+---
+  apiVersion:   apps/v1
+  kind:   Deployment
+  metadata:
+    name:   dnmonster
+  spec:
+    selector:
+      matchLabels:
+        run:   dnmonster
+    replicas:   2
+    template:
+      metadata:
+        labels:
+          run:   dnmonster
+      spec:
+        containers:
+        - name:   dnmonster
+          image:   amouat/dnmonster:1.0
+          ports:
+          - containerPort:   80

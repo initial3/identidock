@@ -6,7 +6,7 @@ import hashlib
 app = Flask(__name__)
 # cache = redis.StrictRedis(host='redis', port=6379, db=0)
 salt = "UNIQUE_SALT"
-default_name = 'Joe Bloggs'
+default_name = 'Jenkins V1'
 
 @app.route('/', methods=['GET','POST'])
 def mainpage():
